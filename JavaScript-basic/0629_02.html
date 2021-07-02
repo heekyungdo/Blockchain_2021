@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Scope - 선언된 변수에 대한 접근성의 의미
+        // function myFunction() {
+        //     let carName = "볼보"; //local scope (함수안에서만 접근 가능)
+        //     console.log(carName);
+        // }
+        // let carName = "기아";
+        // console.log(carName);
+        // // myFunction();
+        // //함수 안에서 선언된 변수는 함수 밖에서 접근 못해.안에서만 접근 가능
+        // //밖에 선언된 변수들을 글로벌 스콥이라고함.Global Scope.어디서든 접근이 가능한 전역 스콥이라고 함
+
+
+
+        // let carName = "기아";
+
+        // function myFunction() {
+        //     let carName = "볼보";
+        //     console.log(carName);
+        // }
+
+        // console.log(carName);
+
+        // myFunction();
+
+        // function add(x1, x2) {
+        //     var sum = X1 + x2;
+        //     return sum;
+        // }
+        // add(5, 4);
+
+
+        // var total = 0; // 밖에 있으면 결과값: 500,2500,3500 (더해짐)
+
+        // function getDrink(inputCoin) {
+        //     var total = 0; //안에 있으면 결과값 500,2000 (더해지지 않음)
+        //     total += inputCoin;
+
+        //     return total;
+        // }
+
+        // console.log(getDrink(500));
+        // console.log(getDrink(2000));
+
+
+        // getDrink(500);
+        // getDrink(2000);
+        // myFunction();
+        //함수안에서는 동일한 변수가 있으면 사용가능. 밖에서는 불가능
+        //함수 밖에 있는 변수(글로벌 스콥)는 어디서든 접근 가능
+        //처음 carName에 대한 키를 함수안에서 찾고, 함수 안에 없으면 밖에 있는(글로벌 스콥) 키 사용
+        //함수 밖에서 쓰는 경우:
+
+
+
+        //Default Function Parameter - 함수의 파라미터 기본 값
+        function say(message) {
+            console.log(message);
+        }
+        say("함수 호출 - 메시지"); //함수 호출 - 메시지
+        // say(); //- undefined
+
+
+
+        // function add(x1, x2) {
+        //     if (x1 != undefined && x2 != undefined) {}
+        //     return x1 + x2;
+        // } else {
+
+        // }
+        // console.log(add(5)); //NaN
+
+
+        // function say(message = "파라미터가 안들어왔네요.") {
+        //     console.log(message);
+        // }
+        // say("파라미터 전달"); //파라미터 전달
+        // say(); //- 파라미터가 안들어왔네요.  기본값이 안들어오면 파라미터 내용 출력
+    </script>
+</body>
+
+</html>

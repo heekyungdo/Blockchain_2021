@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //try-catch에서 안묶은거에서 에러나면 그 다음 것들 출력안해.
+        //
+        console.log("콘솔에 출력");
+
+        var x = 2;
+        var y = 3;
+
+        console.log(x + y);
+
+        //try-catch
+        try {
+
+        } catch (error) {
+
+        }
+
+
+
+
+
+
+        try {
+            consoel.log("콘솔에 출력");
+
+        } catch (error) {
+            console.log(error.name);
+            console.log(error.message);
+        }
+
+        var x = 2;
+        var y = 3;
+
+        console.log(x + y);
+
+
+
+        var x = 2;
+        var y = 3;
+        //강제로 에러를 발생시킬 수 있다
+        try { //if true면 value is zero출력, false면?????
+            if (x == 0) {
+                throw "value is zero." //throw만나면 무조건 catch로 간다
+            }
+        } catch (error) {
+            console.log(error)
+        } finally {
+            console.log("try/catch를 모두 실행한 후 반드시 실행하는 부분")
+        }
+    </script>
+</body>
+
+</html>

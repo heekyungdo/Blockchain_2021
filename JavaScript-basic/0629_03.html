@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    <script>
+        //Mock 서버 - 가짜서버구축
+
+        //Promise
+        const url = " https://3575c48f-c5ce-4fda-b280-a213e251779c.mock.pstmn.io/";
+
+        // var data = axios.get(url);
+        // console.log(data);
+
+        // function getData() { //그 다음 코드를 실행하지 않고, 기다려주겠다.
+        //     return new Promise(function (resolve, reject) { //resolve-성공했을때, 
+        //reject-실패했을때(시간이 지나도 답이 없으면. 로딩이 느리면 기다리지말자.종료하자. 
+        //너무 오래 걸리면 사용자한테 조금이따가 다시 시도해주시기 바랍니다.와 같은 창 뜨게 만들어)
+        //         axios.get(url).then(function (response) {
+        //             resolve(response.data);
+        //         }); //데이터(url)를 끝까지 다 받아오고 나면(then), response라는 걸 파라미터으로 넣어줘
+        //     });
+        // }
+
+        // getData().then(function (jsonData) {
+        //     console.log(jsonData.data); 
+        // });
+
+        getData().then(function (jsonData) {
+            //     console.log(jsonData.data); 
+            // }), catch(function(err){ //catch 에러가 나면
+            console.log(err);
+        });
+
+
+
+        //Async-Await - 비동기 방식. function 앞에는 async넣어줘. await을 쓰려면 앞에 async를 꼭 써야해 / 개발자가 더 선호하는 방식
+        async function api(url) { //뭐든 던져주면 url만들어주는 것. 서버로 호출하는 프로그램
+            return (await axios.get(url)).data;
+        }
+
+        async function getData(path) {
+            var data = (await api(url + path));
+            console.log(path, data);
+        }
+
+        async function getDrinkList() {
+            var data = (await api(url + "getDrinkList"));
+            console.log(data);
+        }
+
+        getDrinkList();
+        getUserList();
+
+        getData("getUserList");
+        getData("getDrinkList");
+
+
+
+        //fetch()
+
+        fetch(url + "getUserList").then(function (response) { //받아오고 나면
+            return response.json(); //받아온걸 인식을 못해서. json이라고 호출을 해줘야해
+        }).then(function (data) {
+            console.log(data);
+        });
+    </script>
+</body>
+
+</html>
