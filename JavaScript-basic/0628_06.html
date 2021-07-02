@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var productList = [{
+                name: "솔의눈",
+                price: 700
+            },
+            {
+                name: "커피",
+                price: 700
+            },
+            {
+                name: "파워에이드",
+                price: 1200
+            },
+            {
+                name: "오렌지",
+                price: 1000
+            },
+            {
+                name: "보리차",
+                price: 1200
+            },
+            {
+                name: "밀키스",
+                price: 800
+            }
+        ];
+
+
+
+
+        //JSON 객체
+        //JavaScript Object Notation의 약자
+        //데이터를 주고 받는 데이터 포맷 형식
+        //const newsList=
+        //배열로 되어있는 건 json형태 아님. 오브젝트 형식만 json 형태
+        //만약 배열로 되어있으면, 오브젝트 형식으로 바꿔야해.
+
+        //키밸류의 오브젝트랑 완전 똑같이 생겼다. 
+        //그냥 오브젝트에는 name:"솔의 눈"/price:700인데, json의 키에는 ""꼭 붙여야해. ex) "name":"솔의 눈", "price":700
+        //JSON.stringify(); - stringify는 제이슨형태의 파일을 데이터 형식(문자열)으로 변환. 더이상 오브젝트가 아님.
+        //JSON.parse(); - 다시 오브젝트 형태로 바뀜
+
+        var jsonString = JSON.stringify(productList);
+        console.log(jsonString);
+
+        var jsonObject - JSON.parse(jsonString);
+        console.log(jsonObject);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Math객체
+
+        //round() => 파라미터로 전달받은 숫자형 데이터를 반올림 처리함
+        console.log(Math.round(4.9)); //=> 5
+        console.log(Math.round(-4.2)); //=> -4
+        console.log(Math.round(4.4)); //=> 4
+
+        //ceil() =>  파라미터로 전달받은 숫자형 데이터를 무조건 올림 처리해서 정수를 만듦
+        //총 개수 91개 게시물. 한창에 10개보여줘야돼. 그럼 총 10페이지 있어야해. 그러기 위해선 올림 처리 필요
+        //총 개수 96개 게시물. 한창에 10개 보여줘야돼. 그럼 총 10페이지 있어야해. 그러기 위해선 올림 처리 필요
+        console.log(Math.ceil(4.4)); //=> 5
+
+        //floor() //=>무조건 내림
+        console.log(Math.floor(4.9)); //4
+
+        //trunc() //-무조건 정수 부분만 반환. 소숫점 이하는 무조건 버려
+        console.log(Math.trunc(4.9)); //4
+
+        //sign() - 숫자가 양수값이면 무조건 1, 음수값이면 -1, 0이면 0
+        console.log(Math.sign(0)); //0
+
+        //pow() - 제곱
+        console.log(Math.pow(8, 2)); //64   ???
+
+        //sqrt() -루트값
+        console.log(Math.sqrt(64)); //8
+
+        //abs() - 무조건 양수값 반환. 음수값도 양수값 변환. 음수이면, 음수 부호 없애고, 무조건 양수로 변환
+        console.log(Math.abs(-4.7)); //4.7
+
+        //min(), max()
+        console.log(Math.min(2, 23, 12, 45, 33, 5533)); //2 (여기값중에 가장 작은거)
+        console.log(Math.max(2, 23, 12, 45, 33, 5533)); //5533 (여기값중에 가장 큰거)
+
+        //random() - 실행할때마다 무작위 숫자형 데이터가 나오는데.. 데이터 값은 0보다 크고, 1보다 작은 수가 나온다.
+        //1보다 작은 수가 무작위로 나오는 것
+        console.log(Maath.random()); //0.279428~~ -> 0.83434~~ -> ~ 
+        console.log(Math.floor(Math.random() * 10)); //??? 0~9사이 수
+        console.log(Math.floor(Math.random() * 10) + 1); //??? 1~10사이 수
+        console.log(Math.floor(Math.random() * 100) + 1); //??? 1~100사이 수 
+
+        function getRandomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandomInteger(11, 20)); //10~20사이?
+
+
+        //문제. 가위바위보 게임 함수 만들기
+        //함수명 - rspPlayer
+        //파라미터 - 1개 - "가위","바위","보"
+        //const arrRsp=["가위","바위","보"];
+        //random 함수를 써서 0~2까지 정수를 무작위로 나오게 해서... 
+        //이것을 arrRsp배열에 인덱스번호로 넣으면 가위인지 보인이 바위인지 나온다
+        //return - object type {} / {}안에 {userRsp:"",playRsp:"",winner:이기면 1, 지면-1, 무승부면 0}
+
+
+        //나
+        function rspPlayer("가위") {
+            const arrRsp = ["가위", "바위", "보"];
+            for (const index of arrRsp) {
+                if (arrRsp.index == 0) {
+
+                }
+                return {}
+
+            }
+        }
+        console.log(rspPlayer(Math.random() * 3)); //max, min사용
+
+        //강사님
+        //첫번째 방법
+        function rspPlayer(userRsp) {
+            const rsp = ["가위", "바위", "보"];
+            const playerRsp = rsp[getRandomInteger(0, 2)];
+
+            if (userRsp == playerRsp) {
+                return {
+                    "userRsp": userRsp,
+                    "playerRsp": playerRsp,
+                    "winner": 0
+                };
+            } else if (userRsp == "가위") {
+                if (playerRsp == "보") {
+                    return {
+                        "userRsp": userRsp,
+                        "playerRsp": playerRsp,
+                        "winner": 1
+                    };
+                } else {
+                    return {
+                        "userRsp": userRsp,
+                        "playerRsp": playerRsp,
+                        "winner": -1
+                    };
+                }
+            } else if (userRsp == "바위") {
+                if (playerRsp == "가위") {
+                    return {
+                        "userRsp": userRsp,
+                        "playerRsp": playerRsp,
+                        "winner": 1
+                    };
+                } else {
+                    return {
+                        "userRsp": userRsp,
+                        "playerRsp": playerRsp,
+                        "winner": -1
+                    };
+                }
+            } else if (userRsp == "보") {
+                if (playerRsp == "바위") {
+                    return {
+                        "userRsp": userRsp,
+                        "playerRsp": playerRsp,
+                        "winner": 1
+                    };
+                } else {
+                    return {
+                        "userRsp": userRsp,
+                        "playerRsp": playerRsp,
+                        "winner": -1
+                    };
+                }
+            }
+        }
+
+
+        //두번째 방법
+        //오브젝트 타입
+        //commonjs에 넣기 rspplay2에서 2빼고
+    </script>
+</body>
+
+</html>

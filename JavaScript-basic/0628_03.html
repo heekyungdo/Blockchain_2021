@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+
+
+    <script>
+        var oUser = {};
+        // oUser["female"] = 1;
+
+        // oUser = {
+        //     "female": 1, //=>female키가 있는 유저가 만들어짐
+        //     "male": 1
+
+
+        // }
+        for (var user of userList) {
+            if (oUser[user.gender]) {
+                oUser[user.gender] += 1;
+
+            } else {
+                oUser[user.gender] = 1;
+            }
+
+        }
+        console.table(oUser);
+
+        //map //key:value가지고 있어//key값으로 배열, 오브젝트를 넣을 수 있어. map자체에 has라는 함수가 있어
+        var myMap = new Map();
+        myMap.set("female", 1); //=>key value가진 것
+        console.log(myMap.get("female"));
+        //위와 같은 예시 적기\
+        //맵은 사이즈??
+
+
+
+
+        //set 객체 (배열객체랑 비슷해). 키로 오브젝트만 사용할 수 있다. 특정키 삭제는 delete함수 사용. 모든 키 삭제는 clear 함수 사용
+        // var arr=[];   //=>배열
+        // var arr = new Array(); //위와 같은 방법 제공함 그러나 위에가 더 간편해서 위에꺼 사용
+        // arr.push(1);
+        // arr.push(3);
+
+
+        //set은 유일한 값만 보장받고싶을 때. 유일한 값만 걸러내고 싶을 때 사용. 유일한 배열 형태이지만, 유일한 값만 가진다. 배열처럼 데이터를 일렬로 정렬가능. 
+        //무조건 유일한 값이어야 한다.
+        var mySet = new Set(); //=> set객체는 대괄호방법은 제공하지 않아. new set은 약식(배열의 대괄호 사용과 같은)이 없어 그래서 정석대로 사용
+        mySet.add(1);
+        mySet.add(3);
+        mySet.add(12);
+        mySet.add(3); //=>이미 3이 있으나 또 3을 추가하려고 하면. 뒤에서 추가시키려는 애를 추가 시켜주지 않음. 
+        //배열은 마지막에 써도 추가 시켜주지만, set객체는 아니야. 동일한 값을 추가 시켜주지 않아.
+        mySet.has(3); //=> true, false로 return을 해줌. for문과 같은 느낌. 이런 값이 존재했나 체크가능
+        mySet.delete();
+        mySet.delete(3); //= 1,12
+        mySet.clear; //전부다 삭제
+        console.log(mySet);
+
+        //키로 문자열만 / 몇개의 데이터가 담렸는지 바로 알수없어 프로그램 돌려 - > d오브젝트 set(키에 대한 순서 보장해주지 않음)
+        //키로 어떤 타입도 가능 / 어떤타입인지 바로 알 수 있게 해줘. - > map ? (키에 대한 순서를 보장해줌)
+
+        //문제. 
+        // userList에 있는 사용자 정보 중 age를 이용해서 
+        //각 연령대 별로 몇명의 사용자가 있는지 확인하는 프로그램 작성
+        //함수명 - getAgeGroup()
+        //return - 각 연령대 별로 몇명 있는지
+        //키는 20,30,40 강제로 만들고 ,22살은 20대, 35살은 30대, 42살을 40대에 넣어
+
+
+        //나
+        function getAgeGroup(gap1, gap2, gap3) {
+            var myMap = new Map();
+
+            for (var profile of userList); {
+                if (myMap.has(profile.age)) {
+                    myMap.set(profile.age >= gap1 && profile.age < gap2);
+                } else if {
+                    myMap.set(profile.age >= gap2 && profile.age < gap3);
+                } else if {
+                    myMap.set(profile.age >= gap3);
+                }
+                return myMap;
+            }
+            new Map.set(profile);
+            console.log(getAgeGroup(20, 30, 40));
+
+            //강사님
+            //첫번째 방법
+            function getAgeGroup() {
+                let userAgeMap = new Map();
+                userAgeMap.set("10g", 0);
+                userAgeMap.set("20g", 0);
+                userAgeMap.set("30g", 0);
+                for (var user of userList) {
+                    if (user.age > = 20 && user.age < 30) {
+                        userAgeMap.set("20g", userAgeMap.get("20g") + 1);
+                    } else if (user.age >= 30 && user.age < 40) {
+                        userAgeMap.set("30g", userAgeMap.get("30g") + 1);
+                    } else if (user.age >= 40) {
+                        userAgeMap.set("40g", userAgeMap.get("40g") + 1);
+                    }
+                }
+                return userAgeMap;
+
+            }
+            console.log(getAgeGroup());
+            //table못 쓰는 이유??
+
+            //두번째 방법
+            function getAgeGroup2() {
+                let userAgeGroup = new Map();
+
+                for (var user of userList) {
+                    //"25"
+
+                    var ageGroup = user.age.toString().charAt(0) + "0"; //"20"  => 첫번쨰 캐릭터 2+0 = 20
+                    if (userAgeGroup.has(ageGroup)) {
+                        userAgeGroup.set(ageGroup, userAgeGroup.get(ageGroup) + 1);
+                    } else {
+                        //0인덱스
+                        //userAgeGroup.set("20",1);
+                        //userAgeGroup.set("30",1);
+                        userAgeGroup.set(ageGroup, 1);
+                    }
+
+                }
+            }
+            console.log(getAgeGroup());
+
+
+            //map말구 오브젝트로 구현  ==> 4살은 40대, 1살은 10대가 되는 오류가 있음
+            function getAgeGroup3() {
+                let userAgeGroup = {};
+
+                for (var user of userList) {
+                    var ageGroup = "";
+                    if (user.age < 10) {
+                        ageGroup = "0";
+
+                    } else if (user.age >= 100) {
+                        ageGroup = user.age.toString().charAt(0) + "0";
+                    }
+                }
+
+                for (var user of userList) {
+                    var ageGroup = user.age.toString().charAt(0) + "0";
+                    if (userAgeGroup[ageGroup]) {
+                        userAgeGroup[ageGroup] = userAgeGroup[ageGroup] + 1);
+                } else {
+                    userAgeGroup[ageGroup] = 1;
+                }
+            }
+            return userAgeGroup;
+    </script>
+</body>
+
+</html>
