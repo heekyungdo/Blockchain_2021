@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="doSearch();">조회</button>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>성별</th>
+                <th>회사</th>
+            </tr>
+        </thead>
+        <tbody id="tb"></tbody>
+    </table>
+
+    <script src="user_data.js"></script>
+    <script>
+        function doSearch() {
+            var h = [];
+            for (var user of userList) {
+                h.push('<tr>');
+                h.push('<td>' + user.name + '</td>');
+                h.push('<td>' + user.gender + '</td>');
+                h.push('<td>' + user.company + '</td>');
+                h.push('</tr>');
+
+            }
+            document.getElementById("tb").innerHTML = h.join("")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<!-- 1. 돔요소에 접근(접근을 해야 스타일을 바꾸던, 이벤트를 케치하던, 값을 바꾸던 할 수 있어)
+    2. html태그에 어떻게 각각 접근할 수 있나
+    3.  -->
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="hello" id="txt1"><br>
+    <input type="text" name="" id="txt2"><br>
+
+    <p>ABC</p>
+    <p>DEF</p>
+
+    <h2>당신이 관심있어 하는 프로그래밍 언어는?</h2>
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="js">자바스크립트
+    </label>
+    <label for="">
+        <input type="checkbox" name=" chk_interest" id="" value="html">HTML
+    </label>
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="css">CSS
+    </label>
+
+
+    <div>
+        <label>
+            <input type="radio" name="" id="" value="제주">제주</input>
+        </label>
+        <label>
+            <input type="radio" name="" id="" value="부산">부산</input>
+        </label>
+        <label>
+            <input type="radio" name="" id="" value="서울">서울</input>
+        </label>
+    </div>
+
+
+    <!-- <div style="margin-top:20px;">
+        <botton onclick="myFunction();">조회</botton>
+    </div> -->
+
+
+    <div style="margin-top:20px;">
+        <botton onclick="myFunction();" id="btnSave">저장</botton>
+    </div>
+
+
+    <script>
+        function myFunction() {
+
+            document.querySelector("#btnSave").disable = true; //저장 버튼 누루자 마자 사용자가 다시는 저장 버튼 못 누르도록. 버튼 누르고 나면 회색으로 변해
+
+            setTimeout(function ()) {
+                document.querySelector("#btnSave").disable = false;
+            }, 2000); //2초 후에 false시켜줄거야. 2초 후에 버튼 다시 살아남
+
+        // var ele = document.getElementById("txt1");
+        // console.log(ele);
+
+        var ele = document.querySelector("#txt1"); //#- 아이디로 만들때     .(점)은?
+        console.log(ele);
+
+        // var txt1Value = ele.name;
+        // console.log(txt1Value);
+
+        var txt1Value = ele.value;
+        console.log(txt1Value); //txt1의 밸류값 가져옴
+
+        // var ele2 = document.getElementById("txt2");
+        // ele2.value = "가나다"; //값을 바꾸고 싶으면 새로 assign하면 돼
+
+        // var pTag = document.getElementsByTagName("p");
+        // console.log(pTag); //HTML collection - HTML묶음
+
+        document.querySelectorAll("p"); //태그 네임에 해당하는 것 짜는 방법
+
+        document.querySelectorAll("[name=chk_interest]"); //이름으로 가지고 오겠다
+
+        var chks = document.getElementsByName("chk_interest");
+        console.log(chks);
+
+        for (var chk of chks) { //체크됐냐? 이거 사용하면 사용자가 어떤거 체크했는지 다 알 수 있어
+            if (chk.checked) {
+                console.log(chk.value);
+            }
+        }
+
+        var checkedItems = document.querySelectorAll("[name=chk_interest]:checked") //name chk+interest에서 체크된애만 찾아라
+        for (var chk of checkedItems) { //selectorAll다양한 문법 사용 가능
+            console.log(chk.value); //요소는 []안에 사용
+        }
+
+        console.log(document.querySelector("[name=city]:checked").value);
+        //document.getElementsByClassName - 같은 클래스명에 있는 애들 다 갖고 올 수 있어
+        }
+    </script>
+</body>
+
+</html>
