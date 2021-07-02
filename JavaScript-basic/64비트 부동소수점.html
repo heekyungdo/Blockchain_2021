@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 0.2와 0.1을 더하면 정확히 안떨어져서 64비트 안에 들어가지 않아서
+        // 언젠간 끊어야돼. 끊으니까 정확히 값이 떨어지지 않아. 정확하게 떨어지진 않지만 개발하는데 전혀 문제가 없어. 소숫점이 이렇게 길게 필요할 일이 없어.
+        let x = 0.2 + 0.1;
+        console.log(x);
+
+        console.log((0.2).toString(2)); //=>0.2를 2진수로 바꾸는 방법, 딱 안떨어져. 0.2는 무한소수야
+
+
+        //     //bignumber.js / decima.js    => 정확한 값 계산 가능한 코드 나와있어
+        //     //자바스크립트에서 가장 큰 수를 넘어가면 입력한 수가 안나오고 다른 수가 나와
+        let y = 999999999999999999;
+        console.log(y);
+        console.log(Number.MAX_SAFE_INTEGER); //=>자바스크립트에서 가장 큰 정수 값
+    </script>
+</body>
+
+</html>

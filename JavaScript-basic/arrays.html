@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 연속적인 여러데이터를 넣고 관리하는 것 -> 배열 (array)
+        let cars = ["볼보", "현대자동차", "벤츠", "기아"]; //=> 배열 형식
+        // let person ={}; => 오브젝트 형식
+
+        console.log(cars[0]); //=> 볼보를 찾을 경우
+        console.log(cars[1]); //=>현대자동차 찾을 경우
+        // 배열에는 키없고, 순서만 있어. 프로그램에서 첫번쨰는 1이 아닌 0
+        // ex) 쇼핑몰 장바구니에 담긴 옷들은 배열에 담겨있고, 그 옷들을 다 클릭해서 들어간 옷 하나하나는 오브젝트에 담겨있어
+
+
+        //순서 바꾸는 방법
+        cars[0] = "아우디";
+        console.log(cars[0]);
+
+        //배열에 추가하는 방법
+        car[4] = "BMW";
+
+        //push는 배열 뒷쪽에 추가되는 기능 => 볼보, 현대자동차, 벤츠, 기아, BMW, 쌍용, 쌍용2
+        cars.push("쌍용");
+        cars.push("쌍용2")
+        ''
+
+        console.log(cars);
+    </script>
+</body>
+
+</html>

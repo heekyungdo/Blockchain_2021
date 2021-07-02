@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 자바스크립트는 오브젝트(객체) 의 조합, document, console을 전부 오브젝트라고 불러.전체 오브젝트 안에 또 오브젝트가 있어.
+        // object 오브젝트 , 오브젝트 안에서는 =아니고 :
+        // person이라는 오브젝트 안에 firstname, lastname~~이라는 오브젝트가 있어. {key:value}
+        //오브젝트를 담는 형태(아래 형태)
+        //오브젝트에는 모든 오브젝트를 담을 수 있음
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 40,
+            tel: "01033337777",
+            email: "abcd@mail.com"
+        };
+
+        let person2 = {}; //-> 오브젝트에 선언하지 않고 넣을 수도 있어
+        //추가 하는 방법
+        person.address = "Seoul city";
+
+
+        //firstname은 key
+
+        // console.log(person.firstName);
+        // console.log(person.lastName);
+        // console.log(person.age);
+        // // 해가 바껴서 나이가 바꼈어. 값 바꾸는 방법
+        person.age = 41;
+        console.log(person.age);
+
+        console.log(person["firstName"]); - > 모르는 값은 이 방법을 써
+
+        //[대괄호]안에는 ""써도 되고, 안써도돼
+
+        // 2가지가 있는 이유 : 
+        let firstNameKey = "firstName";
+        console.log(person.firstNamekey); //실행불가, firstnamekey라는 값을 바로 넣을 수가 없어.(점)에는 오브젝트랑 같은 값만 들어갈 수 있어.
+        // firstName은 들어갈수 있어
+        console.log(person[firstNameKey]); //실행가능, 문자열값[대괄호], 문자열 값을 가지고 있으니 접근 가능
+
+        //   사용자가 어떤 키를 입력할지 몰라. age라는 값이 우리한테 전달될거야. 자바스크립트는 반드시 변수로 전환해서 age란 값이 y라는 변수 값에 할당이 될거야. 
+        //     키중에 y라는 값이 없어. 그래서 문자열을 가져오는거야
+
+
+        // []안에는 변수(firstName)가 담길 수 있어. [문자열로 키를 넣는 것] .(점)뒤에는 절대 변수 못 넣어.
+        // 개발하는 시점, 실행하는 시점에 어떤 값을 읽어야할지 모를 때 사용.->[]
+
+
+
+
+        let key = "firstName";
+        // let key=""; ->나중에 이 값만 넣으면 돼. 밑에 console값은 수정안해도 돼.
+        let key = "age";
+
+        console.log(person[key]);
+    </script>
+</body>
+
+</html>

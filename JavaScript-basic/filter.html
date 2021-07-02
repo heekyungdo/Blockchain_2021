@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //드링크 리스트
+        //첫번째 for문
+        for (var i = 0; i < drinkList.length; 1++) {
+            if (drinkList[i].price <= 1000) {
+                console.log(drinkList[i]);
+            }
+        }
+
+
+        //두번쨰 for문-자동으로 드링크라는 변수에 넣어주는거야. 하나하나씩
+        for (var drink of drinkList) {
+            if (drink.price <= 1000) {
+                console.log(drink);
+            }
+        }
+
+
+        //내가 원하는 애만 뽑아주는거 filter. 필터는 내장함수. 파라미터로 문자나 숫자가 아니라.파라미터로 함수 넣어서 던져줘.
+        //for문으로 하나하나 던지면서 너네 함수(필터 안에 함수) 안에 넣어줄게. 넌 그거 받고 조건 만족시켜주면돼.
+        //갖고 오고 싶은면 true로 리턴. 갖고 오기 싫으면 false로 리턴
+
+        var drinks = drinkList.filter(function (drink) { //드링크 항목 하나하나가 들어있는 상태
+            if (drink.price <= 1000) {
+                return true; //받고 싶은애
+            } else {
+                return false; //받기 싫은애
+            }
+        });
+        console.log(drinks);
+
+
+
+
+        var drinks = drinkList.filter(function (drink) {
+            return drink.price <= 1000;
+        });
+        console.log(drinks); //약식
+
+
+
+        //allow
+        var drinks = drinkList.filter(drink) => drink.price <= 1000);
+
+        console.log(drinks);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 조건문 if
+        // 만일 () {   
+        //     뭐뭐해야지.
+        // }
+
+        // if(조건식) {
+        //     코드선언
+        // }
+
+        var age = 20;
+        var isAdult = false;
+
+        if (age >= 19) {
+            isAdult = true;
+        }
+
+        is(isAdult) {
+            //성인에 맞는 코드를 실행해
+        } else {
+            //isAdult ==false, 무조건 else블록 코드 실행
+        }
+
+        //이 위치로
+        //=> if조건이 틀리면 else 코드로 적용돼
+        is(isAdult == ) {
+
+        }
+
+        //==> 20이니까 false라고 생각할 수 있지만, 밑에꺼 적용되서 true라고 떠
+        //그렇기 때문에 is(isAdult == true) 라고 따로 입력할 필요없어.그냥 is(isAdult == ) 라고 쓰면돼
+
+
+
+        //if조건은 위에서 부터 차례로 적용
+        var age = 9;
+        var isFree = false;
+
+        if (age >= 70) {
+            isFree = true;
+        } else if (age < 8) {
+            isFree = true;
+        } else {
+            isFree = false;
+        }
+        //=> 답은 false 첫번쨰 두번쨰 조건 틀려서 마지막 조건에 옴. 하지만 var isFree=false; 써 있어서 마지막 조건 쓸 필요 없긴해. 근데 그냥 예시
+        //만약 나이가 7이면 답은 treu 두번째 조건 만족
+
+
+        //예시.1 조건상향 내용 if문으로 변경
+        var greeting = (time <= 10) ? "Good morning!" : (time <= 16) ? "Good afternoon!" : (time <= 20) ?
+            "Good evening!" : "Good night!"
+
+        if (time <= 10) {
+            greeting = "Good morning!"
+        } else if (time <= 16) {
+            greeting = "Good afternoon!"
+        } else if (time <= 20) {
+            greeting = "Good evening!"
+        } else if (time > 20) {
+            greeting = "Good night!"
+        }
+
+
+        //조건문-switch : 최종 값만 상수로 들어갈 수 있어
+        //swich문은 break를 꼭 넣어야돼. 맞는 값이 나오면 빠져나오라는 말(break>
+        //default????
+        //상수값 비교는 if문보다 switch이 더 빨라. 하지만 쓸 내용이 많아서 개발자는 switch문을 잘 쓰지 않아.
+        var d = new Date();
+        var day = d.getDay(); //=> 일요일이 0
+        console.log("day", day);
+        var dayName = "";
+
+        switch (day) {
+            case 0:
+                dayName = "일요일";
+                break;
+            case 1:
+                dayName = "월요일";
+                break;
+
+
+        }
+
+        //배열, if문으로도 사용 가능
+
+        var dayNames = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
+        console.log(dayNames[day]);
+
+        //강사님 코드 확인
+    </script>
+</body>
+
+</html>

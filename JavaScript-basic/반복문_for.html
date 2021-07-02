@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //반복문 
+        //for-loop
+        var brands = ["애플", "구글", "페이스북", "아마존", "삼성"];
+        // console.log(brands[0]);
+        // console.log(brands[1]);
+        // console.log(brands[2]);
+        // console.log(brands[3]);
+        // console.log(brands[4]);
+
+
+        // //for-loop
+        // //특정 코드 블록을 내가 원하는 만큼 계속해서 반복하는 것
+        // // for (코드1; 조건; 코드2) {
+        // //코드블록
+        // //}
+        // //코드1는 for를 만나면 무조건 한번 실행시키는 코드, 조건는 코드블록을 (만족)실행시킬 수 있는 조건절, 코드2 코드블록을 실행하고나면 무조건 바로 실행되는 것
+
+        // //이렇게 쓰는게 더 효율이 좋아. 바로 밑에꺼는 두번째 구문에서 계속 반복해서 물어보기 때문에 효율이 낮아
+
+
+
+        // var length = brands.length; // 5
+        // for (var i = 0; i <= length; i++) {
+        //     console.log(brands[i]);
+        // }
+
+
+        for (var i = 2; i <= 4; i++) {
+            console.log(brands[i]);
+        }
+
+        //효율 낮은 방법. brands개수 알아서 컴퓨터에서 알려줌
+        for (var i = 0; i < brands.length; i++) {
+            console.log(brands[i]); //애플, 구글, 페이스북, 아마존, 삼성
+        }
+
+
+        for (var i = 0; i < 5; i++) {
+            console.log(brands[i]);
+        }
+
+
+        //이렇게 쓰는 것도 가능
+        var i = 0
+        for (; i < 5; i++) {
+            console.log(brands[i]);
+        }
+
+        //배열에 담긴 총 길이를 알려주는 것 brands.length;
+        //brands.push("개발자의품격");???????
+
+
+
+        //for-in : 오브젝트, array에만 사용가능
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 40,
+            tel: "01033337777",
+            email: "abcd@mail.com"
+        };
+        let person2 = [{
+                firstName: "John",
+                lastName: "Doe",
+                age: 40,
+                tel: "01033337777",
+                email: "abcd@mail.com"
+            },
+            {
+                firstName: "John",
+                lastName: "Doe",
+                age: 40,
+                tel: "01033337777",
+                email: "abcd@mail.com"
+            },
+        ];
+
+
+        // console.log("______________________");
+
+        //person안에 있는 키를 반복문을 통해서 하나하나 다 읽어. 키가 끝날 때까지 읽어줘. 
+        //키 값을 var 변수 안에 넣어준 것
+        // for (var key in person) {
+        //     // console.log(key);
+        //     console.log(key, person[key]);
+        // }
+        // console.log(person2[0]);
+
+        // for (var key in person2) {
+        //     // console.log(key);
+        //     console.log(key);
+        // }
+
+        for (var key1 of person2) {
+            console.log(key1);
+        }
+
+
+        console.log("______________________");
+
+
+        var brands = ["애플", "구글", "페이스북", "아마존", "삼성"];
+        for (var index in brands) {
+            console.log(brands[index]); //brands에 넣고 또 인덱스에서 읽어야해. 배열에서 인덱스 가져온거
+        }
+
+
+        //for-of  : 배열에서 값 자체를 가져옴  => for in 보다 간단
+        for (var brand of brands) {
+            console.log(brand);
+        }
+
+
+        //문자열 : 문자를 하나하나 나눔
+        var lang = "JavaScript";
+        for (var c of lang) {
+            console.log(c);
+        }
+
+        // ==
+        // >
+        // for -loop은 길고 적을 것도 많아서 in이나
+        // of 젤 많이 씀
+    </script>
+</body>
+
+</html>
