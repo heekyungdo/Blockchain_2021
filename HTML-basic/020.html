@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <!-- program_lang은 복수로 선택할 수 있게 하는거 -->
+        <!-- input값에는 values값이 기본적으로 다 있어 -->
+        <!-- autocomplete="on"이전에 입력했던게 저장되어 있어 다음에도 입력하기 쉬움 -->
+        <!-- autofocus는 마우스가 자동으로 검색창 위에 있는것 -->
+        <label for="">사용자ID</label>
+        <input type="text" name="" id="" maxlength="6" value="abcde" autocomplete="on"><br>
+        <input type="text" name="" id="" maxlength="6" value="abcde" autofocus><br>
+        <input type="checkbox" name="program_lang" id="chk_html">
+        <label for="chk_html">HTML</label>
+        <input type="checkbox" name="program_lang" id="chk_css" value="css">
+        <label for="chk_css">CSS</label>
+        <label><input type="checkbox" name="program_lang">자바스크립트</label>
+        <div>
+            <input type="color" name="" id="">
+        </div>
+        <div>
+            <input type="date" name="" id="">
+        </div>
+        <div>
+            <input type="datetime-local" name="" id="">
+        </div>
+        <div>
+            <label for="">이메일</label>
+            <input type="email" name="" id="" placeholder="abc@ddd.com 형식으로 입력하세요.">
+        </div>
+        <div>
+            <input type="file" name="" id="">
+        </div>
+        <div>
+            <input type="file" name="" id="" multiple>
+        </div>
+        <div>
+            <input type="image" src="https://t1.daumcdn.net/cfile/tistory/99954A3F5CDEA26A1B" alt="" width="150">
+        </div>
+        <div>
+            <input type="month" name="" id="">
+        </div>
+        <div>
+            <input type="number" name="" id="">
+        </div>
+        <div>
+            <input type="password" name="" id="">
+        </div>
+        <div>
+            <input type="radio" name="" id="">
+        </div>
+        <div>
+            <!-- 내용이 같으면 여러개 선택이 안돼. check는 check된채로 보여 -->
+            <input type="radio" name="rdo_program_lang" id="rdo_html" checked>
+            <label for="rdo_html">HTML</label>
+            <input type="radio" name="rdo_program_lang" id="rdo_css">
+            <label for="rdo_css">CSS</label>
+            <label><input type="radio" name="rdo_program_lang">자바스크립트</label>
+        </div>
+        <div>
+            <input type="range" name="" id="" min="0" max="50">
+        </div>
+        <div>
+            <!-- x가 생겨 검색한거 한번에 지울 수 있는거 -->
+            <input type="search" name="" id="">
+        </div>
+        <div>
+            <!-- 패턴대로 입력하지 않으면 요청한 형식과 일치하라고 경고뜸 -->
+            <input type="tel" name="" id="" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+        </div>
+        <div>
+            <input type="time" name="" id="">
+        </div>
+        <div>
+            <!-- readonly는 사용자가 수정하길 원하지 않을 때, p.span으로 써도되지않냐고? 하지만 input으로 내용을 보내는 기능이 필요할 땐 readonly로 써야해 -->
+            <input type="url" name="" id="" value="http://www.google.com" readonly>
+        </div>
+        <div>
+            <input type="week" name="" id="">
+        </div>
+        <div>
+            <input type="hidden" name="" value="A">
+        </div>
+        <div>
+            <!-- cols는 넓이값, rows는 제한 줄-->
+            <!-- cols을 style width로 입력하기도 해 -->
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <textarea name="" id="" style="width:100%" rows="10"></textarea>
+        </div>
+        <button type="button">조회</button>
+        <!-- input이 있는건 정보를 넘기는 것! 그냥 button만 만드는건 정보를 넘길 순 없어 -->
+        <input type="submit" vaule="제출">
+        <input type="button" value="저장">
+
+
+
+
+
+    </form>
+
+</body>
+
+</html>
