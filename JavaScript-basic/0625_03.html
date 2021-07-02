@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //넘버객체
+        //넘버는 숫자를 다루는 객체
+
+        //숫자를 문자형으로 바꾸고 싶어
+        var x = 123;
+        x.toString(); //=> 숫자에서 문자로 바뀜
+        x + "" //=> 숫자에서 문자로 바뀜
+
+
+        //toExponential();  => 지수형 숫자. 강사님도 20년동안 쓴적이 없어.
+        x.toexponential(2)
+
+
+        //toFixed()   ==> 소수점 몇자리까지 보여줘라. 숫자가 들쑥날쑥해서 보기 안좋아. 금액이 정렬되어 보이기 위해. 자리수를 맞추기 위해 사용 => 넘버객체가됌
+        var x = 9.656;
+        console.log(x.toFixed(2)); //=> 소수점 두자리까지 보여줘라, 9.66(반올림했음)  
+        console.log(x.toFixed()); // => 소수점 없애라, 10(반올림했음)
+        console.log(x.toFixed(4)); //=> 9.6560
+
+
+        //toPrecision()  => 앞에있는 정수랑 소수점이랑 다 합쳐서 몇자리 보여줄거냐
+        console.log(x.toPrecision(2)); //=>9.7
+
+
+        //parseInt() //=> 문자를 숫자타입으로 바꿔주는거, 글로벌함수, 전역함수. 정수형만 다룸. 반올림도 안하고 무조건 정수만 가져와
+        var x = "10";
+        console.log(parseInt(x)); //=> 문자10이 아닌 숫자 10으로 바뀜
+        console.log(parseInt("10.124")); //=> 10
+        console.log(parseInt("10.66")); //=> 10 => 반올림이고 다 필요없어. 무조건 정수 값만 가져와
+        console.log(parseInt("40 20 30")); //=> 40 => 뒤에꺼 다 버리고 첫번째 발견된 숫자만 가져옴 
+        console.log(parseInt("10 years")); //=>10 => 처음 발견된 숫자
+        console.log(parseInt("years 10")); //=> NaN (not a number) => 처음 발견된 애가 숫자가 아니야
+
+
+        //parseFloat()  ==> 소수점까지 포함한 숫자로 바꾸는거
+        console.log(parseFloat("10.124")); //=> 10.124
+
+
+
+
+        console.log(Number.MAX_VALUE); //=> 1.7~~ => 자바스크립트에서 쓸 수 있는가장 큰 수 
+        console.log(Number.MAX_SAFE_INTEGER); //=> 900~ => 가장 안전하게 쓸 수 있는 최대치
+        console.log(Number.MIN_VALUE); //=>5e-324
+        console.log(Number.MIN_SAFE_INTEGER); //=> -90~~
+        console.log(Number.POSITIVE_INFINITY); //=>infinity
+        console.log(Number.NEGATIVE_INFINITY); //=> -infinity
+
+
+        console.log(3 / 0); //=>infinity => 무한대  ==> 0나누기 3은 0아니고 무한대
+    </script>
+</body>
+
+</html>
