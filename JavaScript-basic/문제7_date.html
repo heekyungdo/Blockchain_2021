@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //문제1. 오늘로부터 5일 전 후 구하기
+        //함수명 - getIntervalDate(intervalDay)
+        //오늘을 기준으로 몇일 후, 몇일 전 그 날짜.
+        //정수 - 양수, 음수
+        //return - 년도/월/일
+
+
+        // 1. 함수 정의한다 
+        // 2. 오늘을 구한다
+        // 3. 오늘로부터 5일 전후를 구한다
+        // 4. return 할때 / 사용
+
+        var date = "2021-06-27";
+        // console.log(date.split("-")); - > 이렇게 쓰면 안되는 이유 ?
+        var arr = date.split("-");
+        console.log(arr);
+        console.log(arr.join("/"));
+
+        function getIntervalDate(intervalDay) {
+            var now =
+        }
+
+        // function getIntervalDate(intervalDay) {
+        //     var now = new Date();
+        //     return new Date(now.getTime());
+        //     var d = new Date(now.getTime() + (60 * 60 * 24 * 1000) * intervalDay));
+        // var year - d.getFullYear();
+        // var month = d.getMonth() + 1;
+        // var day = d.getDate();
+
+        // return year + "/" + month.toString().padStart(2, 0) + "/" + day; //=> 2021/06/20
+        // }
+        // console.log(getIntervalDate(5)); //=> 5일 후
+        // console.log(getIntervalDate(-5)); //=> 5일 전
+
+
+
+
+        // // 문제2.
+        // console.log(getIntervalDate(-5, "YYYY-MM-DD"));
+        // console.log(getIntervalDate(-5, "YYYY.MM.DD"));
+        // console.log(getIntervalDate(-5, "MM.DD.YYYY"));
+
+        // return format.replace함수
+    </script>
+</body>
+
+</html>

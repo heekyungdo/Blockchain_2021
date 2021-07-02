@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        //남자이면서 25세 이상 35세 이하 
+        // 남자이면서 25세 이하이거나 35세 이상
+        // 1. userList에서 값을 담을 곳을 선언해
+        // 2. 객체를 선언해(오브젝트)
+        // 3. gender객체에서 male과 age객체에서 25 세 이상 35 세 이하를 반복문으로 찾아(값이니
+        //     for of )
+        // 4. 찾은 값을 1 번에 넣어
+        // 5. console
+
+
+
+        function who(gender, age1, age2) {
+            var youngMan = [];
+            for (var person of userList) {
+                if (person.gender == gender && person.age >= age1 && person.age <= age2) {
+
+
+                    youngMan.push(person);
+                }
+
+            }
+            return youngMan;
+        }
+        // const profile = function (gender, age1, age2) {
+        //     var youngMan = [];
+        //     for (var person of userList) {
+        //         if (person.gender == gender && person.age >= age1 && person.age <= age2) {
+
+
+        //             youngMan.push(person);
+        //         }       -> 함수를 선언하고 싶으면, 함수를 담을 뭔가(그릇)가 필요하다. 
+
+        //     }
+        //     return youngMan;
+        // }
+        // const who("male", 25, 35); -> X
+        // console.log(who); -> x
+        console.log(who("male", 25, 35));
+
+
+
+
+        // function who(gender, age1, age2) {
+        //     var youngMan = [];
+        //     for (var person of userList) {
+        //         if (person["gender"]) == "male" && ((person["age"]) <= age1 && (person["age"]) >= age2) {
+        //         youngMan.push(gender);
+        //     } else {};
+
+        // }
+        // return who;
+        // }
+        // console.log(who);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // function profile(gender, fromAge, toAge) {
+        //     var youngMan = [];
+        //     for (var people of userList) {
+        //         if (peoeple.gender == gender && (people.age >= fromAge && people.age <= toAage)) {
+        //             youngMan.push(people);
+        //         }
+        //     }
+        //     return youngMan;
+        // }
+
+        // const profile("male", 25, 35);
+        // console.table(profile);
+
+
+
+        //남자이면서 25세 이상 35세 이하 
+        // function getUserList(gender, fromAge, toAge) {
+        //     var outPutList = [];
+        //     for (var user of userList) {
+        //         if (user.gender == "gender" && user.age >= fromAge && user.age <= toAge) {
+        //             outPutList.push(user);
+        //         }
+        //     }
+        //     return outputList;
+        // }
+
+        // let maleUserList = gentUserList("male", 25, 35);
+        // console.table(maleUserList);
+
+
+
+        // 남자이면서 25세 이하이거나 35세 이상
+        //     function getUserList(gender, age, age2) {
+        //         var outPutList = [];
+        //         for (var user of userList) {
+        //             if (user.gender == "gender" && user.age >= age || user.age <= age2) {
+        //                 outPutList.push(user);
+        //             }
+        //         }
+        //         return outputList;
+        //     }
+
+        //     let maleUserList = gentUserList("male", 25, 30);
+        //     console.table(maleUserList);
+        // 
+    </script>
+</body>
+
+</html>

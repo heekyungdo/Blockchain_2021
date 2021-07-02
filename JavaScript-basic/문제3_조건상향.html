@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //예시.1 조건상향 내용 if문으로 변경
+        var greeting = (time <= 10) ? "Good morning!" : (time <= 16) ? "Good afternoon!" : (time <= 20) ?
+            "Good evening!" : "Good night!"
+
+
+        // 1. greeting 시간과 인사를 선언했으니
+        // 2. if문 써보기
+        // 3. 이거아님 저거니까 elsf if 사용
+
+
+        var time = 11;
+        if (time <= 10) {
+            greeting = "Good morning!"
+        } else if (time <= 16) {
+            greeting = "Good afternoon!"
+        } else if (time <= 20) {
+            greeting = "Good evening!"
+        } else if (time > 21) {
+            greeting = "Good night!"
+        }
+        console.log(greeting);
+
+
+        // if (time <= 10) {
+        //     greeting = "Good morning!"
+        // } else if (time <= 16) {
+        //     greeting = "Good afternoon!"
+        // } else if (time <= 20) {
+        //     greeting = "Good evening!"
+        // } else if (time > 20) {
+        //     greeting = "Good night!"
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        src = "user_data.js"
+    </script>
+    <!-- 나이 총합, 나이 평균, 가장 나이 많은 사람, 가장 나이 적은 사람 -->
+    <!-- return 사용 -->
+    <script>
+        //나이총합 - getUserAgeSum
+        //나이평균 - getUserAgeAvg
+        //나이제일많은나이 - getUserAgeMax
+        //나이제일적은나이 - getUserAgeMin
+
+
+        1. userList에서 오브젝트를 가져온다.
+        2. 오브젝트 내 age를 읽는다.어떻게 ? ?
+            3. age를 더한다
+
+        function getUserAgeMath() {
+            let sum = 0;
+            let maxAge = 0; //26
+            let minAge = Number.MAX_SAFE_INTEGER; //24
+
+
+            for (var user of userList) {
+                sum += user.age;
+
+                if (user.age > maxAge) {
+                    maxAge = user.age;
+                }
+
+                if (user.age < minAge) {
+                    minAge = user.age;
+                }
+            }
+
+            let avg = sum / userList.length;
+
+            return {
+                "sum": sum,
+                "avg": avg,
+                "maxAge": maxAge,
+                "minAge": minAge
+            }
+        }
+        let userMath = getUserAgeMath();
+        console.table(userMath);
+    </script>
+</body>
+
+</html>
